@@ -54,8 +54,8 @@ from datetime import datetime # Alex, added for screen capture 12/16/13
 app = QApplication(sys.argv)
 
 #QImaging Rolera Bolt Specs:
-#width = 1280
-#height = 1024
+#   width = 1280
+#   height = 1024
 recording_status = 0
 recording_frame_count = 0
 movie_title = None
@@ -66,21 +66,21 @@ cameraDevice = cw.CameraDevice()
 grid = Grid.Grid()
 #MousePoints = MousePoints.MousePoints()  not used anymore
 MSSInterface = MSSInterface.MSSInterface()
-
 myCrosshairCursor = QCursor(QBitmap("mycrosshair.bmp"),QBitmap("mycrosshairmask.bmp"),10,10)
 #myCrosshairCursor = QCursor(QBitmap(".\\rsc\\cursor.png"),QBitmap(".\\rsc\\cursor_mask.png"),10,10)
-
 useDummyArrowsWindow = False
-
 numpyFrame = None;
 rawFrame = None;
 
-#the following logging device is for debug purposes
+####################################################
+# Debug purposes
 logOutput = QTextEdit()
 logOutput.moveCursor(QTextCursor.End)
 logOutput.setReadOnly(True)
 logOutput.setWindowTitle('Logging Device')
 #logOutput.show()
+####################################################
+
 
 myautopatcher = None;
 
@@ -97,7 +97,8 @@ cluster_centroids = []
 GUIhandle_Scope = None;
 GUIHandle_Manip = None;
 
-
+####################################################
+##### Initializes the program ###########
 class MainDisplay(QMainWindow):
     def __init__(self, parent=None):
         #this has to go at the beginning of every qt widget initialization
@@ -269,9 +270,11 @@ class MainDisplay(QMainWindow):
         self.display.destroy()
         self.destroy()
         
-    #Used to watch for keyboard input.  Usually just a simple key press, but for moving around
-    #you have to hold keys down, which is kept track of.  Calls the appropriate command or queue 
-    #item in MSSInterface
+    '''
+        Used to watch for keyboard input.  Usually just a simple key press, but for moving around
+        you have to hold keys down, which is kept track of.  Calls the appropriate command or queue 
+        item in MSSInterface
+    '''
     def keyPressEvent(self, event):
         #logOutput.append("currentkeyboardunit: %d  currentkeyboardmanip: %d" % (self.currentkeyboardunit,self.currentkeyboardmanip))
         if type(event) == QKeyEvent:
@@ -565,7 +568,8 @@ class MainDisplay(QMainWindow):
         app.quit()
         
 
-
+####################################################
+##### Display debug information ####################
 class DebugWindow(QDialog):
     def __init__(self, parent=None):
         super(DebugWindow, self).__init__(parent)
@@ -643,6 +647,8 @@ class DebugWindow(QDialog):
     def keyReleaseEvent(self,event):
         self.parent.keyReleaseEvent(event)
 
+####################################################
+##### Detect Cell ####################
 class DetectCell(QThread):
 
     sig = pyqtSignal()
@@ -841,8 +847,10 @@ class DetectCell(QThread):
         self.sig.emit()
 
 
-#This is the backdrop for the video scene, which contains a pixmap of the current
-#frame from the camera and is displayed after removing the previous frame.
+##############################################################
+# This is the backdrop for the video scene 
+#  it contains a pixmap of the current frame and
+#    the camera and is displayed after removing the previous frame.
 class CameraScene(QGraphicsScene):
 
     newFrame = pyqtSignal(cv2.cv.iplimage)  # mark
@@ -937,9 +945,10 @@ class CameraScene(QGraphicsScene):
         return arr 
 
 
-#contains the video output as its qgraphicsscene, and uses DrawForeground 
-#to redraw the grid, which is called whenever possible as far as I can tell.
-#it also keeps track of what's being clicked on, and handles various mouse situations.
+##############################################################
+# Contains the video output as its qgraphicsscene, and uses DrawForeground 
+#   to redraw the grid, which is called whenever possible as far as I can tell.
+#       it also keeps track of what's being clicked on, and handles various mouse situations.
 class VideoDisplay(QGraphicsView):
     def __init__(self, parent=None):
         QGraphicsView.__init__(self)
@@ -1639,8 +1648,9 @@ class VideoDisplay(QGraphicsView):
                     painter.drawText(QPoint(x[0]+6, x[1]+4), str(counter))
                 counter += 1
         
+####################################################
 #This is the grid control panel, which you can use to change the grid parameters.  It also
-#contains a table with the current center points of the grid lines.
+#   contains a table with the current center points of the grid lines.
 class GridControl(QDialog):
     def __init__(self, parent=None):
         super(GridControl, self).__init__(parent)
@@ -1773,7 +1783,8 @@ class GridControl(QDialog):
         self.pointstablemodel = GridTableModel(grid.getCenterPointsUM(),['x','y'])
         self.pointstable.setModel(self.pointstablemodel)
 
-#I didn't write any of this, it's just a basic bare bones table class.  Pretty straightforward, I guess
+####################################################
+# Table class for displaying grid
 class GridTableModel(QAbstractTableModel): 
     def __init__(self, datain, headerdata, parent=None, *args): 
         """ datain: a list of lists
@@ -1811,6 +1822,8 @@ class GridTableModel(QAbstractTableModel):
         self.emit(SIGNAL("layoutChanged()"))
         
 
+####################################################
+# Dummy program for testing
 class DeviceReadoutDummy(QWidget):
     def __init__(self,unitnum,manip,isStage,parent=None):
         super(DeviceReadoutDummy,self).__init__(parent)
@@ -2242,8 +2255,9 @@ class DeviceReadoutDummy(QWidget):
         self.setLayout(self.deviceReadoutLayout)
         
 
-#This class corresponds to the individual readouts for the manipulator coordinates and calibration.
-#It is added to the QWidget Arrows based on how many manipulators etc are present.
+####################################################
+# This class corresponds to the individual readouts for the manipulator coordinates and calibration.
+#   It is added to the QWidget Arrows based on how many manipulators etc are present.
 class DeviceReadout(QWidget):
     def __init__(self,unitnum,manip,isStage,parent=None):
         super(DeviceReadout,self).__init__(parent)
@@ -6024,7 +6038,10 @@ class GarbageCollector(QObject):
         for obj in gc.garbage:
             print (obj, repr(obj), type(obj))
 
-#start the app, or something
+
+####################################################
+# START of the program
+#       Calls the initializer class
 mainwindow = MainDisplay()
 mainwindow.show()  
 
