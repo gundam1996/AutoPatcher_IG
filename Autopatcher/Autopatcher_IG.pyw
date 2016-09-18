@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+1# -*- coding: utf-8 -*-
 """
 Created on Tue Dec 13 14:01:28 2011
 
@@ -21,7 +21,7 @@ This file is part of AutoPatcher_IG.
     You should have received a copy of the GNU General Public License
     along with AutoPatcher_IG.  If not, see <http://www.gnu.org/licenses/>.
 
-@Author: Zhaolun Su, Brendan Callahan, Alexander A. Chubykin
+@Author: Yingtong Chen, Zhaolun Su, Brendan Callahan, Alexander A. Chubykin
 
 """
 
