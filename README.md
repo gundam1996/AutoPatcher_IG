@@ -50,10 +50,39 @@ Software Component requirements:
 	Desktop Software & environments:
 	
 	- Windows 7 or higher (Windows 7. 64 bit)
-	- Anaconda (Python 2.7. *32 bit*)
+	- Anaconda (Python 2.7. 32 bit)
 	- Commandline Bash Simulation (Git bash)
 	
-User Guide:
+To Get Started (with recommended setting):
 --------------------------------------------------------
+0. Make sure that you have a windows 7 (or higher) 64 bit computer
 
-	(in progress)
+1. Make sure that you have the hardware device as listed set up (and the driver installed)
+
+2. Install Anaconda (32bit, Python 2.7)
+
+3. Install Git Bash (64bit, Windows)
+
+4. Update pip package by:
+	- Open a git bash window
+	- Enter "pip install --upgrade pip"
+	- Wait for program to finish
+
+5. Go to website: (http://www.lfd.uci.edu/~gohlke/pythonlibs)
+	- Install OpenCV (for python 2.4, 32bit)
+
+To Run the Program:
+--------------------------------------------------------
+0. Open a git bash window, make sure you have turned on all device
+
+1. Move to the target directory by using 
+		"cd [path to file folder]"
+
+2. Open the manipulator driver that comes with the manipulator
+
+3. Run the entire program by typing
+		"python Autopatcher_IG.py"
+
+3. (If you are only insterested in using the patching functionability)
+	Run the program by typing
+		"python autopatcher.py"
