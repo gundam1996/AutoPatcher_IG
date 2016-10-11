@@ -32,7 +32,8 @@ Hardware Componenet requirements:
 	- Microscope (Scientifica Slicescope)
 	- Digitizer (Molecular Devices Digidata 1550A Digitizer)
 	- Amplifier (Molecular Devices Axon Digidata 1550B)
-	-  Data Acquisition Board (Home-made. Welcome to send email for detail)
+	- Data Acquisition Board (Home-made. Welcome to send email for detail)
+		(saved as "Circuit_board_set_up.jpg" in the folder)
 
 Software Component requirements: 
 --------------------------------------------------------
