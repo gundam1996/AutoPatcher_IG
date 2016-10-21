@@ -11,7 +11,7 @@ Copyright:
 
 	This file is part of AutoPatcher_IG.
 
-    AutoPatcher_IG is free software: you can redistribute it and/or modify
+    AutoPatcher_IG is a free to be used in non-profit organizations for non-commercial purposes: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -32,8 +32,8 @@ Hardware Componenet requirements:
 	- Microscope (Scientifica Slicescope)
 	- Digitizer (Molecular Devices Digidata 1550A Digitizer)
 	- Amplifier (Molecular Devices Axon Digidata 1550B)
-	- Data Acquisition Board (Home-made. Welcome to send email for detail)
-		(saved as "Circuit_board_set_up.jpg" in the folder)
+	- Data Acquisition Board (Measurement Computing USB-1208FS. Welcome to send email for detail)
+	- Pressure Control Unit (Homemade. Saved as Circuit_board_set_up.jpg in the folder)
 
 Software Component requirements: 
 --------------------------------------------------------
@@ -44,8 +44,8 @@ Software Component requirements:
 	
 	- Manipulator Unit Driver(Scientifica PatchStar Manipulator)
 	- Microscope Driver(Scientifica Slicescope)
-	- Digitizer Driver(Molecular Devices Digidata 1550A Digitizer)
-	- Amplifier Driver(Molecular Devices Axon Digidata 1550B)
+	- Digitizer Driver(Molecular Devices Digidata 1550 Digitizer)
+	- Amplifier Driver(Molecular Devices Axon CNS MultiClamp 700B)
 	- Data Acquisition Board Driver(Universal Library. Welcome to send email for detail)
 
 	Desktop Software & environments:
