@@ -44,6 +44,7 @@ Software Component requirements:
 	
 	- Manipulator Unit Driver(Scientifica PatchStar Manipulator)
 	- Microscope Driver(Scientifica Slicescope)
+	- Camera Driver(ThorlabsDCx_camera software package)
 	- Digitizer Driver(Molecular Devices Digidata 1550 Digitizer)
 	- Amplifier Driver(Molecular Devices Axon CNS MultiClamp 700B)
 	- Data Acquisition Board Driver(Universal Library. Welcome to send email for detail)
@@ -53,6 +54,10 @@ Software Component requirements:
 	- Windows 7 or higher (Windows 7. 64 bit)
 	- Anaconda (Python 2.7. 32 bit)
 	- Commandline Bash Simulation (Git bash)
+	- Some Python libraries: (One source of the website to download: http://www.lfd.uci.edu/~gohlke/pythonlibs/)
+		- OpenCV
+		- Qimaging (64 bit driver)
+
 	
 To Get Started (with recommended setting):
 --------------------------------------------------------
@@ -87,3 +92,22 @@ To Run the Program:
 3. (If you are only insterested in using the patching functionability)
 	Run the program by typing
 		"python autopatcher.py"
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+Udpating installation details:
+1. Save the port data in configuration/port.csv [port, device(sci in our case), number(always be 1)]
+		or 
+	Use confiuration.py
+2. Current running version:
+	python 2.7.12
+	Anaconda 4.1.1 (32bit)
